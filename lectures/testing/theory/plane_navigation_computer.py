@@ -30,7 +30,17 @@ class NearestEnemyFinder:
         :return: the N nearest enemy targets. If there are less than N enemy radar then return the
         """
 
+        print("hello world")
+        print(str(2+4))
         # TODO - exercise for the student to write an implementation
+
+
+if __name__ == '__main__':
+    print("hello")
+    print("world")
+    test = 12
+
+    alpha = "nineteen"
 
 
 

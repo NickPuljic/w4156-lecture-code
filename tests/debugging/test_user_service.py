@@ -3,7 +3,7 @@ import os
 import tempfile
 import unittest
 
-import helper as helper
+#import helper as helper
 import lectures.debugging.user_service as service
 
 
@@ -70,8 +70,12 @@ class UserServiceTest(unittest.TestCase):
     def test_lab_for_student(self):
         # Exercise to the student
         # Write a test which replicates the bug
-        pass
-
+        for u in self.one_direction:
+            res = self.app.post("/users", data=dict(name=u))
+        res = self.app.get("/users/count")
+        self.assertCount(res, 4)
+        res = self.app.get("/users/count")
+        self.assertCount(res, 4)
 
     def tearDown(self):
         os.close(self.db_fd)

@@ -139,7 +139,7 @@ def count_users():
     """
     logging.debug("count users ...")
     db = get_db()
-    rows = db.execute("delete from USERS").rowcount
+    rows = len(db.execute("select * from USERS;").fetchall())
     db.commit()
     return jsonify(
         success=True,
